@@ -1,11 +1,12 @@
 import TextField from "components/Fields/TextField";
 import { Formik } from "formik";
 import React from "react";
-import { Button, View, Text } from "react-native";
-import { TouchableNativeFeedback, TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {  Text, View } from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import commonStyles from "styles/common";
+import Button from 'components/Button'
 import * as Yup from "yup";
-import styles from './Input.styles';
+import styles from "./Input.styles";
 
 const initialValues = {
   email: "",
@@ -19,7 +20,7 @@ const Input = (props) => {
 
   const handleForgotPassword = () => {
     console.log("handleForgotPassword");
-  }
+  };
   return (
     <View style={styles.formContainer}>
       <Formik
@@ -41,7 +42,6 @@ const Input = (props) => {
           return (
             <View>
               <TextField
-                // label={translate('name')}
                 label="Email Address"
                 keyboardType="default"
                 value={values.email}
@@ -52,9 +52,7 @@ const Input = (props) => {
                 autoCapitalize="words"
               />
               <TextField
-                // label={translate('phoneNumber')}
                 label="Password"
-                //   keyboardType="numeric"
                 value={values.password}
                 error={errors.password}
                 touched={touched.password}
@@ -63,7 +61,9 @@ const Input = (props) => {
                 autoCapitalize="characters"
               />
               <TouchableWithoutFeedback onPress={handleForgotPassword}>
-                  <Text style={[styles.forgotPassword, commonStyles.bold]}>Forgot Password!</Text>
+                <Text style={[styles.forgotPassword, commonStyles.bold]}>
+                  Forgot Password!
+                </Text>
               </TouchableWithoutFeedback>
               <Button title={"Login"} onPress={handleSubmit as any} />
             </View>

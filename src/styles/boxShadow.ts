@@ -8,5 +8,5 @@ export default {
   },
   shadowOpacity: 0.3,
   shadowRadius: 0.7,
-  elevation: 10,
+  elevation: 4,
 };
