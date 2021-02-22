@@ -25,7 +25,7 @@ const Routes: FC = ({ children }) => {
           {config.map((routeProps: Props, idx) => (
             <RouteItem {...routeProps} key={idx} />
           ))}
-          <Route component={() => <Redirect to={pathNames.home} />} />
+          <Route component={() => <Redirect to={pathNames.login} />} />
         </Switch>
       </BackButton>
       {children}

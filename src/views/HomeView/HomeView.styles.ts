@@ -1,4 +1,7 @@
+import colors from 'styles/colors';
+import fontSize from 'styles/fontSize';
 import { StyleSheet } from 'react-native';
+import boxShadow from 'styles/boxShadow';
 
 export default StyleSheet.create({
   container: {
