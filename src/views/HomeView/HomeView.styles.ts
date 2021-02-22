@@ -2,9 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    paddingTop: 80,
-    paddingHorizontal: 8,
-    borderWidth: 4,
+    marginTop: 80,
+    marginBottom: 20,
+    paddingHorizontal: 18,
+    // borderWidth: 4,
     borderRadius: 15,
     display: 'flex',
     flexDirection: 'row',

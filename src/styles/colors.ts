@@ -5,7 +5,7 @@ export default {
   textTertiary: '#817f75',
   headerBg: '#191919',
   button: '#cf6679',
-  primary: '#E04E39',
+  primary: '#FE724C',
   white: '#fff',
   bg: '#F4F4F4',
   bgWithOpacity: 'rgba(0,0,0,0.6)',
@@ -20,6 +20,7 @@ export default {
   muted: '#FFFFFFDE',
   secondaryGray: '#686666',
   primaryGray: '#363434',
+  blackOverlay: '#000000a0'
 };
 
 export enum ColorTypes {
