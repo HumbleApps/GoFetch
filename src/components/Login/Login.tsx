@@ -6,14 +6,14 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import commonStyles from "styles/common";
 import Button from 'components/Button'
 import * as Yup from "yup";
-import styles from "./Input.styles";
+import styles from "./Login.styles";
 
 const initialValues = {
   email: "",
   password: "",
 };
 
-const Input = (props) => {
+const Login = (props) => {
   const handleSubmit = (values: typeof initialValues) => {
     console.log(values);
   };
@@ -74,4 +74,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export default Login;

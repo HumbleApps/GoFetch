@@ -1,29 +1,45 @@
-import React, { Fragment } from "react";
-
-import Text from "components/Text";
-import { View, Image, StatusBar, SafeAreaView } from "react-native";
-import styles from "./LoginView.styles";
+import Login from "components/Login";
+import Signup from "components/Signup";
+import Tabs from "components/Tabs/Tabs";
+import { Auth } from "constants/auth";
+import React, { useState } from "react";
+import { Image, SafeAreaView, StatusBar } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import styles from "./LoginView.styles";
 
 const PULSES = require("assets/images/pulses.jpg");
 
-import Input from 'components/Input'
-import Tabs from "components/Tabs/Tabs";
-
 const LoginView = () => {
+  const [view, setview] = useState(<Login />);
+  const handleSelectedTab = (activeTab) => {
+    switch (activeTab) {
+      case Auth.LOGIN: {
+        setview(<Login />);
+        break;
+      }
+      case Auth.SIGNUP: {
+        setview(<Signup />);
+        break;
+      }
+    }
+  };
   return (
     <SafeAreaView>
       <ScrollView>
         <Image source={PULSES} style={styles.image} />
         <StatusBar
           animated={true}
-          backgroundColor="#61dafb"
+          backgroundColor="transparent"
           barStyle={"light-content"}
           showHideTransition={"fade"}
           hidden={true}
         />
-        <Tabs first={"Login"} second={"Signup"}/>
-        <Input/>
+        <Tabs
+          first={Auth.LOGIN}
+          second={Auth.SIGNUP}
+          handleTabChange={(activeTab) => handleSelectedTab(activeTab)}
+        />
+        {view}
       </ScrollView>
     </SafeAreaView>
   );
