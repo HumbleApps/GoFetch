@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { View } from "react-native";
 import Text from "components/Text";
 import styles from "./Tabs.styles";
 
-const Tabs = ({ first = "", second = "" }) => {
-  const [activeTab, setactiveTab] = useState(second);
+type Props = {
+  first?: string;
+  second?: string;
+  handleTabChange?: (tab) => void;
+};
+
+const Tabs: FC<Props> = ({ first = "", second = "", handleTabChange }) => {
+  const [activeTab, setactiveTab] = useState(first);
+
+  useEffect(() => {
+    if (handleTabChange) {
+      handleTabChange(activeTab);
+    }
+  }, [activeTab]);
   return (
     <View style={styles.tabContainer}>
       <View
