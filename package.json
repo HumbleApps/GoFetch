@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@eva-design/eva": "^2.0.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-native-fontawesome": "^0.2.6",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
     "@ui-kitten/components": "^5.0.0",
@@ -23,10 +25,23 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@types/crypto-js": "^4.0.1",
+    "@types/enzyme": "^3.10.8",
+    "@types/i18n-js": "^3.0.3",
+    "@types/jest": "^26.0.15",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "@types/react-native-push-notification": "^7.0.1",
+    "@types/react-native-vector-icons": "^6.4.6",
+    "@types/react-redux": "^7.1.11",
+    "@types/react-router-native": "^5.1.0",
     "babel-jest": "~25.2.6",
+    "husky": "^5.1.0",
     "jest": "~25.2.6",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "react-test-renderer": "~16.13.1",
     "typescript": "~4.0.0"
   },
@@ -36,6 +51,17 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "eject": "expo eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "private": true,
   "name": "GoFetch",
