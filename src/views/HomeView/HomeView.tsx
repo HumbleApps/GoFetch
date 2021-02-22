@@ -9,10 +9,9 @@ import styles from "./HomeView.styles";
 const HomeView = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Navbar header={"Home"} />
       <ScrollView>
+      <Navbar header={"Home"} />
         <View style={styles.container}>
-          <CartItem />
           <CartItem />
           <CartItem />
           <CartItem />
