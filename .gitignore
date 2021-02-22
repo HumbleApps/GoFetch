@@ -174,4 +174,4 @@ web-build/
 # @end expo-cli
 
 #java hprof files
-.hprof
+*.hprof
