@@ -8,6 +8,7 @@ import { ScrollView } from "react-native-gesture-handler";
 const PULSES = require("assets/images/pulses.jpg");
 
 import Input from 'components/Input'
+import Tabs from "components/Tabs/Tabs";
 
 const LoginView = () => {
   return (
@@ -21,14 +22,7 @@ const LoginView = () => {
           showHideTransition={"fade"}
           hidden={true}
         />
-        <View style={styles.tabContainer}>
-          <View style={[styles.tab, styles.tabActive, styles.tabLeft]}>
-            <Text style={styles.tabText}>Login</Text>
-          </View>
-          <View style={[styles.tab, styles.tabRight]}>
-            <Text style={styles.tabText}>Signup</Text>
-          </View>
-        </View>
+        <Tabs first={"Login"} second={"Signup"}/>
         <Input/>
       </ScrollView>
     </SafeAreaView>
