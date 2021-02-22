@@ -11,6 +11,8 @@ const HomeView = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
       <Navbar header={"Home"} />
+
+
         <View style={styles.container}>
           <CartItem />
           <CartItem />

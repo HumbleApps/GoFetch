@@ -3,15 +3,15 @@ import { Provider } from "react-redux";
 
 import Routes from "routes";
 import store from "store";
-import HomeView from "views/HomeView";
+import LoginView from "views/LoginView";
 
 export default function App() {
   return (
     <Fragment>
       <Provider store={store}>
-        <Routes>
-          <HomeView />
-        </Routes>
+        {/* <Routes> */}
+          <LoginView/>
+        {/* </Routes> */}
       </Provider>
     </Fragment>
   );

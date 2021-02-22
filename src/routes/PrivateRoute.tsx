@@ -30,7 +30,7 @@ const PrivateRoute: FC<Props> = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: '/',
+              pathname: '/login',
               state: { from: props.location.pathname },
             }}
           />
