@@ -1,25 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { StyleSheet, View } from "react-native";
+import { Provider } from "react-redux";
 
-import * as eva from "@eva-design/eva";
-import {
-  ApplicationProvider,
-  IconRegistry,
-  Layout,
-  Text,
-} from "@ui-kitten/components";
-import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import Routes from "routes";
+import store from "store";
 import HomeView from "views/HomeView";
-import { AppNavigator } from "components/navigation/navigation";
 
 export default function App() {
   return (
-    <>
-      <IconRegistry icons={EvaIconsPack} />
-      <ApplicationProvider {...eva} theme={eva.light}>
-        <AppNavigator />
-      </ApplicationProvider>
-    </>
+    <Fragment>
+      <Provider store={store}>
+        <Routes>
+          <HomeView />
+        </Routes>
+      </Provider>
+    </Fragment>
   );
 }
 
