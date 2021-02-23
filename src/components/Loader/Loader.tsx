@@ -5,11 +5,10 @@ import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import Overlay from 'components/Overlay';
 
 import colors from 'styles/colors';
-
-// import { selectLoaderCount } from 'selectors/loaderSelector';
+import { selectLoaderCount } from '../../selectors/loaderSelector';
 
 const Loader = () => {
-  const loaderCount = 0 //useSelector(selectLoaderCount);
+  const loaderCount = useSelector(selectLoaderCount);
 
   if (loaderCount === 0) {
     return null;

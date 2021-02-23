@@ -1,13 +1,13 @@
+import Button from "components/Button";
 import TextField from "components/Fields/TextField";
+import useAuth from "components/hooks/useAuth";
 import { Formik } from "formik";
 import React from "react";
 import { Text, View } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import commonStyles from "styles/common";
-import Button from "components/Button";
 import * as Yup from "yup";
 import styles from "./Login.styles";
-import useAuth from "components/hooks/useAuth";
 
 const initialValues = {
   email: "",
@@ -52,7 +52,7 @@ const Login = () => {
                 touched={touched.email}
                 onBlur={handleBlur("email")}
                 onChangeText={handleChange("email")}
-                // autoCapitalize="words"
+                autoCapitalize="none"
               />
               <TextField
                 label="Password"
@@ -61,7 +61,7 @@ const Login = () => {
                 touched={touched.password}
                 onBlur={handleBlur("password")}
                 onChangeText={handleChange("password")}
-                // autoCapitalize="characters"
+                autoCapitalize="none"
               />
               <TouchableWithoutFeedback onPress={handleForgotPassword}>
                 <Text style={[styles.forgotPassword, commonStyles.bold]}>

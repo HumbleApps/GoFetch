@@ -25,10 +25,10 @@ export const decryptToken = (encryptedToken: string | null): string | null => {
  * @param token - verified user token
  */
 export const setToken = async (token: string) => {
-  const encryptedToken = encryptToken(token);
+  // const encryptedToken = encryptToken(token);
 
   try {
-    await AsyncStorage.setItem(TOKEN_KEY, encryptedToken);
+    await AsyncStorage.setItem(TOKEN_KEY, token);
   } catch (err) {
     console.error(err);
   }
@@ -52,7 +52,8 @@ export const getToken = async () => {
     return encryptToken;
   }
 
-  return decryptToken(encryptedToken);
+  return encryptedToken;
+  // return decryptToken(encryptedToken);
 };
 
 /**
