@@ -2,10 +2,12 @@ import { SET_LOGGED_IN_USER } from "actions/authActions";
 
 type InitialState = {
   email: string;
+  uid: string;
 };
 
 const initialState: InitialState = {
-  email: ''
+  email: '',
+  uid: ''
 };
 
 const authReducer = (state = initialState, action: any) => {
@@ -13,7 +15,8 @@ const authReducer = (state = initialState, action: any) => {
     case SET_LOGGED_IN_USER: {
       return {
         ...state,
-        email: action.data,
+        email: action.data.email,
+        uid: action.data.uid
       };
     }
 

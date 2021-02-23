@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Redirect, RouteProps } from 'react-router-native';
+import { selectIsAuthenticated } from 'selectors/authSelectors';
 // import { useSelector } from 'react-redux';
 
 // import { selectIsAuthenticated } from 'selectors/userSelector';
@@ -15,7 +17,7 @@ interface Props extends RouteProps {
  * @returns <PrivateRoute />
  */
 const PrivateRoute: FC<Props> = ({ component: Component, ...rest }) => {
-  const isAuthenticated = false; //useSelector(selectIsAuthenticated);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
   if (!Component) {
     return null;

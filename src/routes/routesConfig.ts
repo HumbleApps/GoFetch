@@ -17,13 +17,13 @@ const config: RouteType[] = [
     path: pathNames.home,
     component: gestureHandlerRootHOC(HomeView),
     exact: true,
-    isPrivate: false,
+    isPrivate: true,
   },
   {
     path: pathNames.shops,
     component: gestureHandlerRootHOC(ShopView),
     exact: true,
-    isPrivate: false,
+    isPrivate: true,
   },
   {
     path: pathNames.login,

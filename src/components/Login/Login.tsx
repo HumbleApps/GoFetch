@@ -7,39 +7,22 @@ import commonStyles from "styles/common";
 import Button from "components/Button";
 import * as Yup from "yup";
 import styles from "./Login.styles";
-import auth from "@react-native-firebase/auth";
+import useAuth from "components/hooks/useAuth";
 
 const initialValues = {
   email: "",
   password: "",
 };
 
-const Login = (props) => {
+const Login = () => {
+  const { signIn } = useAuth();
   const handleSubmit = (values: typeof initialValues) => {
     console.log(values);
+    signIn(values);
   };
 
   const handleForgotPassword = () => {
     console.log("handleForgotPassword");
-    auth()
-      .createUserWithEmailAndPassword(
-        "jane.doe@example.com",
-        "SuperSecretPassword!"
-      )
-      .then(() => {
-        console.log("User account created & signed in!");
-      })
-      .catch((error) => {
-        if (error.code === "auth/email-already-in-use") {
-          console.log("That email address is already in use!");
-        }
-
-        if (error.code === "auth/invalid-email") {
-          console.log("That email address is invalid!");
-        }
-
-        console.error(error);
-      });
   };
   return (
     <View style={styles.formContainer}>
@@ -69,7 +52,7 @@ const Login = (props) => {
                 touched={touched.email}
                 onBlur={handleBlur("email")}
                 onChangeText={handleChange("email")}
-                autoCapitalize="words"
+                // autoCapitalize="words"
               />
               <TextField
                 label="Password"
@@ -78,7 +61,7 @@ const Login = (props) => {
                 touched={touched.password}
                 onBlur={handleBlur("password")}
                 onChangeText={handleChange("password")}
-                autoCapitalize="characters"
+                // autoCapitalize="characters"
               />
               <TouchableWithoutFeedback onPress={handleForgotPassword}>
                 <Text style={[styles.forgotPassword, commonStyles.bold]}>
