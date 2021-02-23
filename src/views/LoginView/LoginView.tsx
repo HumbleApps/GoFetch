@@ -33,7 +33,7 @@ const LoginView = () => {
 
   if (isAuthenticated) {
     console.log("🚀 ~ file: LoginView.tsx ~ line 34 ~ LoginView ~ isAuthenticated", isAuthenticated)
-    return <Redirect to={pathNames.home} />;
+    return <Redirect to={pathNames.shops} />;
   }
 
   return (

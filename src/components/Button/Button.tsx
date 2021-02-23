@@ -1,18 +1,20 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 import {
   TouchableOpacityProps,
   NativeSyntheticEvent,
   NativeTouchEvent,
   TextStyle,
   TouchableOpacity,
-} from 'react-native';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+  Image,
+  ImageSourcePropType,
+} from "react-native";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
-import Text from 'components/Text';
-import Icon from 'components/Icon';
+import Text from "components/Text";
+import Icon from "components/Icon";
 
-import styles from './Button.style';
-import colors from 'styles/colors';
+import styles from "./Button.style";
+import colors from "styles/colors";
 
 interface Props extends TouchableOpacityProps {
   title: string;
@@ -21,6 +23,7 @@ interface Props extends TouchableOpacityProps {
   titleStyle?: TextStyle;
   isOutlined?: boolean;
   isClear?: boolean;
+  leftImage?: ImageSourcePropType;
 }
 
 const Button: FC<Props> = ({
@@ -33,6 +36,7 @@ const Button: FC<Props> = ({
   isClear = false,
   onPress = () => {},
   disabled,
+  leftImage,
   ...props
 }) => {
   const handlePress = (e: NativeSyntheticEvent<NativeTouchEvent>) => {
@@ -55,6 +59,7 @@ const Button: FC<Props> = ({
       {iconLeft && (
         <Icon icon={iconLeft} color={isClear ? colors.primary : colors.white} />
       )}
+      {leftImage && <Image source={leftImage} />}
       <Text
         style={[
           styles.title,

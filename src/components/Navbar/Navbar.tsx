@@ -18,6 +18,7 @@ import useNavbar from './useNavbar';
 import styles from './Navbar.styles';
 import pathNames from 'routes/pathNames';
 import { useHistory } from 'react-router-native';
+import colors from 'styles/colors';
 // import { Icons } from 'constants/icons';
 
 type Props = {
@@ -27,6 +28,8 @@ type Props = {
   showLanguage?: boolean;
   showNotification?: boolean;
   backPath?: pathNames;
+  backgroundColor?: string;
+  color?: string;
 };
 
 const Navbar: FC<Props> = ({
@@ -36,6 +39,8 @@ const Navbar: FC<Props> = ({
   showLanguage = false,
   showNotification = false,
   backPath,
+  backgroundColor = colors.primary,
+  color = colors.white
 }) => {
   const history = useHistory();
 
@@ -44,14 +49,14 @@ const Navbar: FC<Props> = ({
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor}]}>
       <View style={styles.section}>
         {isBackable && (
           <TouchableOpacity onPress={() => {}}>
-            <Icon icon={faArrowLeft} />
+            <Icon icon={faArrowLeft} color={color}/>
           </TouchableOpacity>
         )}
-        {!isEmpty(header) && <Text style={styles.header}>{header}</Text>}
+        {!isEmpty(header) && <Text style={[styles.header, {color}]}>{header}</Text>}
       </View>
     </View>
   );

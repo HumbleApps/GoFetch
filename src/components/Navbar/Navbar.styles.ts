@@ -5,7 +5,7 @@ import fontSize from 'styles/fontSize';
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
+    height: 40,
     paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     width: Dimensions.get('window').width,
+    // borderWidth:1,
   },
   section: {
     flexDirection: 'row',
     alignItems: 'center',
+    // borderWidth:1
   },
   langBtn: {
     flexDirection: 'row',

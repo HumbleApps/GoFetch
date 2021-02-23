@@ -1,6 +1,9 @@
 export default {
-  primary: '#FE724C',
-  secondary: '#FFC529',
+  primary: '#FE724C',   // orange
+  secondary: '#FFC529', // yellow
+  secondaryLight: '#ffe599', //Light yellow
+  secondaryActive: '#fdedbe',
+  golden: '#fbbb00',
   gray: '#D7D7D7',
   backgroundMain: '#262626',
   text: '#1D1919',
