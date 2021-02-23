@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "77620119859",
+    "project_id": "go-fetch-48634",
+    "storage_bucket": "go-fetch-48634.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77620119859:android:6b04fe6adf25a4707f9646",
+        "android_client_info": {
+          "package_name": "com.gofetch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77620119859-jcsgl89lv7au0vkl16v5v7ig4lovinb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA44NY05bqTWGxub7-c-866hpYSyhw8h8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77620119859-jcsgl89lv7au0vkl16v5v7ig4lovinb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
