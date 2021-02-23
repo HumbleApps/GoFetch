@@ -8,6 +8,7 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import commonStyles from "styles/common";
 import * as Yup from "yup";
 import styles from "./Login.styles";
+import auth from "@react-native-firebase/auth";
 
 const initialValues = {
   email: "",
@@ -23,6 +24,25 @@ const Login = () => {
 
   const handleForgotPassword = () => {
     console.log("handleForgotPassword");
+    auth()
+      .createUserWithEmailAndPassword(
+        "jane.doe@example.com",
+        "SuperSecretPassword!"
+      )
+      .then(() => {
+        console.log("User account created & signed in!");
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          console.log("That email address is already in use!");
+        }
+
+        if (error.code === "auth/invalid-email") {
+          console.log("That email address is invalid!");
+        }
+
+        console.error(error);
+      });
   };
   return (
     <View style={styles.formContainer}>
