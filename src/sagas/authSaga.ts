@@ -1,5 +1,5 @@
 import auth from '@react-native-firebase/auth';
-import { CREATE_NEW_USER, setLoggedInUser, SIGNIN, SIGNOUT } from 'actions/authActions';
+import { CREATE_NEW_USER, setAuthenticated, setLoggedInUser, SIGNIN, SIGNOUT } from 'actions/authActions';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { withLoadingAndErrors } from 'sagas/helperSaga';
 import { removeToken, setToken } from 'utils/token';
@@ -14,9 +14,11 @@ function* _createNewFirebaseUser(action) {
   try {
     const res: CreateUserResponse = yield auth().createUserWithEmailAndPassword(email, password);
     yield put(setLoggedInUser({ email, uid: res.user.uid }));
+    yield put(setAuthenticated(true));
     yield call(setToken, res.user.uid);
 
   } catch (error) {
+    yield put(setAuthenticated(false));
     if (error.code === 'auth/email-already-in-use') {
       console.log('That email address is already in use!');
     }
@@ -41,9 +43,11 @@ function* _signInFirebaseUser(action) {
   try {
     const res: CreateUserResponse = yield auth().signInWithEmailAndPassword(email, password);
     yield put(setLoggedInUser({ email, uid: res.user.uid }));
+    yield put(setAuthenticated(true));
     yield call(setToken, res.user.uid);
 
   } catch (error) {
+    yield put(setAuthenticated(false));
     if (error.code === 'auth/invalid-email') {
       console.log('That email address is invalid!');
     }
@@ -62,6 +66,7 @@ function* signInUser() {
 function* _signOutFirebaseUser() {
   try {
     yield auth().signOut();
+    yield put(setAuthenticated(false));
     yield call(removeToken);
   }
   catch (err) {

@@ -6,5 +6,7 @@ export const selectUserEmail = (state: RootState): boolean =>
 export const selectUserToken = (state: RootState): boolean =>
   state.auth.uid;
 
-export const selectIsAuthenticated = (state: RootState): boolean => !!state.auth.uid;
+export const selectIsAuthenticated = (state: RootState): boolean => state.auth.isAuthenticated;
+
+export const selectIsFetching = (state: RootState): boolean => state.auth.isFetching;
 

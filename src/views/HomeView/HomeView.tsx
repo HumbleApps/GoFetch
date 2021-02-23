@@ -1,10 +1,11 @@
 import CartItem from "components/CardItem/CardItem";
 import Navbar from "components/Navbar";
 import React, { Fragment } from "react";
-import { SafeAreaView, View, Text } from "react-native";
+import { SafeAreaView, View, Text, StatusBar } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useSelector } from "react-redux";
 import { selectUserEmail } from "selectors/authSelectors";
+import colors from "styles/colors";
 
 import styles from "./HomeView.styles";
 
@@ -13,6 +14,13 @@ const HomeView = () => {
   console.log("🚀 ~ file: HomeView.tsx ~ line 13 ~ HomeView ~ email", email);
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar
+          animated={true}
+          backgroundColor={colors.primary}
+          barStyle={"light-content"}
+          showHideTransition={"fade"}
+          hidden={false}
+        />
       <ScrollView>
         <Navbar header={"Home"} />
 
