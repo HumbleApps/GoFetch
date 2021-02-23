@@ -1,12 +1,13 @@
 import TextField from "components/Fields/TextField";
 import { Formik } from "formik";
 import React from "react";
-import {  Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import commonStyles from "styles/common";
-import Button from 'components/Button'
+import Button from "components/Button";
 import * as Yup from "yup";
 import styles from "./Login.styles";
+import auth from "@react-native-firebase/auth";
 
 const initialValues = {
   email: "",
@@ -20,6 +21,25 @@ const Login = (props) => {
 
   const handleForgotPassword = () => {
     console.log("handleForgotPassword");
+    auth()
+      .createUserWithEmailAndPassword(
+        "jane.doe@example.com",
+        "SuperSecretPassword!"
+      )
+      .then(() => {
+        console.log("User account created & signed in!");
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          console.log("That email address is already in use!");
+        }
+
+        if (error.code === "auth/invalid-email") {
+          console.log("That email address is invalid!");
+        }
+
+        console.error(error);
+      });
   };
   return (
     <View style={styles.formContainer}>
