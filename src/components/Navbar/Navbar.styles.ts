@@ -6,7 +6,7 @@ import fontSize from 'styles/fontSize';
 const styles = StyleSheet.create({
   container: {
     height: 40,
-    paddingHorizontal: 10,
+    // paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: colors.primary,

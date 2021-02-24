@@ -13,6 +13,7 @@ export default StyleSheet.create({
         marginBottom: 10,
         flexDirection: 'row',
         padding: 10,
+        backgroundColor: colors.white
     },
     shopCardImageContainer: {
         borderWidth: 2,

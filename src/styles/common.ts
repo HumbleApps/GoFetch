@@ -12,6 +12,7 @@ const commonStyles = StyleSheet.create({
     commonScrollViewContainer: {
         marginTop: 40,
         marginBottom: 60,
+        backgroundColor: colors.backgroundGray
     },
     bold: {
         fontWeight: '700'

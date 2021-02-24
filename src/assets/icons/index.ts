@@ -4,3 +4,7 @@ export const SHOP_ICON = require('./shops.png');
 export const BLUE_CIRCLE_ICON = require('./blue_circle.png');
 export const RED_CIRCLE_ICON = require('./redcircle.png');
 export const PICKUP_TRUCK_ICON = require('./pickup-truck.png');
+export const SPEAKER_ICON = require('./speaker.png');
+export const JUG_ICON = require('./jug-product.png');
+export const BAKERY_ICON = require('./bakery_product.png');
+export const DAIRY_PRODUCTS = require('./dairy-products.png');

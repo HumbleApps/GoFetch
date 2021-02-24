@@ -48,11 +48,15 @@ const Navbar: FC<Props> = ({
     history.push(pathNames.shops);
   };
 
+  const handleBackable = () => {
+    history.goBack();
+  }
+
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <View style={styles.section}>
         {isBackable && (
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={handleBackable}>
             <Icon icon={faArrowLeft} color={color}/>
           </TouchableOpacity>
         )}

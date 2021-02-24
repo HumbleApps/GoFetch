@@ -4,6 +4,7 @@ export default {
   secondaryLight: '#ffe599', //Light yellow
   secondaryActive: '#fdedbe',
   golden: '#fbbb00',
+  backgroundGray: '#f9f9f9',
   gray: '#D7D7D7',
   backgroundMain: '#262626',
   text: '#1D1919',
