@@ -13,6 +13,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import colors from "styles/colors";
 import commonStyles from "styles/common";
 import styles from "./StoreView.styles";
+import BottomNavigation from "components/BottomNavigation";
 
 const ShopScreen = () => {
   return (
@@ -103,6 +104,7 @@ const ShopScreen = () => {
           />
         </View>
       </ScrollView>
+      <BottomNavigation/>
     </SafeAreaView>
   );
 };
