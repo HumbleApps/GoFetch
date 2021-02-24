@@ -64,6 +64,7 @@
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
+    "build:prod": "./scripts/build_prod.sh",
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "eject": "expo eject"
