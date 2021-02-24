@@ -6,7 +6,7 @@ import boxShadow from 'styles/boxShadow';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.secondaryLight,
     flexDirection: 'row',
     justifyContent: 'center',
     borderRadius: 50,

@@ -1,26 +1,30 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/Icon";
 import Text from "components/Text";
+import { Operation } from "constants/operation";
 import React, { FC, useState } from "react";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import colors from "styles/colors";
-import styles from "./ProductCounterButton.style";
+import styles from "./Counter.style";
 
 type Props = {
   maxCount: number;
+  handleCount: (operation: string, count: number) => void;
 };
 
-const Button: FC<Props> = ({ maxCount = 20 }) => {
+const Counter: FC<Props> = ({ maxCount = 20, handleCount }) => {
   const [counter, setCounter] = useState<number>(0);
 
   const handleIncrement = () => {
     if (counter < maxCount) {
+      handleCount(Operation.ADD, counter + 1);
       setCounter(counter + 1);
     }
   };
   const handleDecrement = () => {
     if (counter > 0) {
+      handleCount(Operation.REMOVE, counter - 1);
       setCounter(counter - 1);
     }
   };
@@ -38,4 +42,4 @@ const Button: FC<Props> = ({ maxCount = 20 }) => {
   );
 };
 
-export default Button;
+export default Counter;

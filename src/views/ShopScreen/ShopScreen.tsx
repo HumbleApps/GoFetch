@@ -3,6 +3,7 @@ import {
   MAP_ICON,
   PICKUP_TRUCK_ICON
 } from "assets/icons";
+import BottomNavigation from "components/BottomNavigation";
 import Button from "components/Button";
 import Navbar from "components/Navbar";
 import ShopCard from "components/ShopCard";
@@ -60,6 +61,7 @@ const ShopScreen = () => {
           <ShopCard/>
         </View>
       </ScrollView>
+      <BottomNavigation/>
     </SafeAreaView>
   );
 };
