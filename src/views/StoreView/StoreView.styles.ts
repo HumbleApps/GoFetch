@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
+import colors from 'styles/colors';
 
 export default StyleSheet.create({
     container: {
         marginTop: 10,
-        marginBottom: 10
     },
     buttonContainer: {
         marginTop: 10,
@@ -11,4 +11,16 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
+    stripContainer:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        alignItems: 'center',
+        alignContent: 'center',
+        padding: 6
+    },
+    stripText: {
+        color: colors.white,
+    }
 })

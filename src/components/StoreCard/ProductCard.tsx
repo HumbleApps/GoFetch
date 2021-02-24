@@ -14,11 +14,12 @@ type Props = {
   image?: ImageSourcePropType;
   description?: string;
   stock: number;
+  id: number | string;
 };
 
-const ProductCard: FC<Props> = ({ image, name, description, price, stock }) => {
+const ProductCard: FC<Props> = ({ image, name, description, price, stock, id }) => {
   return (
-    <View style={styles.storeCard}>
+    <View style={styles.storeCard} key={id}>
       <View style={styles.storeCardImageContainer}>
         <Image source={image} style={styles.storeCardImage} />
       </View>
@@ -32,7 +33,7 @@ const ProductCard: FC<Props> = ({ image, name, description, price, stock }) => {
             <Icon icon={faDollarSign} color={colors.golden} size={14} />
             <Text style={styles.price}>{price}</Text>
           </View>
-          <ProductCounterButton maxCount={stock} />
+          <ProductCounterButton maxCount={stock}/>
         </View>
       </View>
     </View>
