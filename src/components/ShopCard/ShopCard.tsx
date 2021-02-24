@@ -10,7 +10,6 @@ import pathNames from "routes/pathNames";
 export default ({ active = false }) => {
     const history = useHistory();
   const handleStoreClick = () => {
-    console.log("store lonk click")
     history.push(pathNames.store);
   };
   return (

@@ -7,6 +7,7 @@ enum pathNames {
   booking = '/booking',
   order = '/order',
   bookmark = '/bookmark',
+  cart = '/cart',
 }
 
 export default pathNames;

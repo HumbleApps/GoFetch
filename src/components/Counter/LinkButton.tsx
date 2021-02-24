@@ -9,7 +9,7 @@ import {
 
 import isEmpty from 'utils/isEmpty';
 
-import styles from './ProductCounterButton.style';
+import styles from './Counter.style';
 
 interface Props extends TextProps {
   title: string;
