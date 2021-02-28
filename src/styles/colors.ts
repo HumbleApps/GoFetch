@@ -1,8 +1,10 @@
 export default {
   primary: '#FE724C',   // orange
   secondary: '#FFC529', // yellow
+  secondaryMedium: '#ffce00', // yellow
   secondaryLight: '#ffe599', //Light yellow
   secondaryActive: '#fdedbe',
+  secondaryInactive: '#fff2bf',
   golden: '#fbbb00',
   backgroundGray: '#f9f9f9',
   gray: '#D7D7D7',

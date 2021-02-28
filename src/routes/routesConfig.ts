@@ -8,6 +8,7 @@ import HomeView from 'views/HomeView';
 import LoginView from 'views/LoginView';
 import StoreView from 'views/StoreView';
 import CartView from 'views/CartView';
+import CheckoutView from 'views/CheckoutView';
 
 interface RouteType extends RouteProps {
   isPrivate: boolean;
@@ -42,6 +43,12 @@ const config: RouteType[] = [
   {
     path: pathNames.cart,
     component: gestureHandlerRootHOC(CartView),
+    exact: true,
+    isPrivate: false,
+  },
+  {
+    path: pathNames.checkout,
+    component: gestureHandlerRootHOC(CheckoutView),
     exact: true,
     isPrivate: false,
   },

@@ -43,7 +43,7 @@ const commonStyles = StyleSheet.create({
         alignItems: 'center'
     },
     textMain: {
-        color: colors.secondaryGray,
+        color: colors.text,
         fontWeight: '700',
     },
     textSecondary: {

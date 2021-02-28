@@ -9,6 +9,8 @@ import React from "react";
 import { SafeAreaView, StatusBar, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-native";
+import pathNames from "routes/pathNames";
 import { selectItemsInCart, selectTotalAmount } from "selectors/cartSelectors";
 import colors from "styles/colors";
 import commonStyles from "styles/common";
@@ -17,6 +19,12 @@ import styles from "./CartView.styles";
 const CartView = () => {
   const products = useSelector(selectItemsInCart);
   const total = useSelector(selectTotalAmount);
+
+  const history = useHistory();
+
+  const handleCheckout = () => {
+    history.push(pathNames.checkout);
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -68,6 +76,7 @@ const CartView = () => {
         isRound={true}
         sideMargin={40}
         style={{ marginTop: 20 }}
+        onPress={handleCheckout}
       />
       <BottomNavigation />
     </SafeAreaView>
