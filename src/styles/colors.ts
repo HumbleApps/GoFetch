@@ -26,7 +26,8 @@ export default {
   muted: '#FFFFFFDE',
   secondaryGray: '#686666',
   primaryGray: '#363434',
-  blackOverlay: '#000000a0'
+  blackOverlay: '#000000a0',
+  navbarBackgroundColor: '#FFC529'
 };
 
 export enum ColorTypes {

@@ -5,7 +5,6 @@ import { Dimensions, StyleSheet } from 'react-native';
 const commonStyles = StyleSheet.create({
     mainContainer: {
         paddingHorizontal: 24,
-        // borderWidth: 1,
         marginTop: 18,
         paddingVertical: 6
     },
@@ -41,28 +40,28 @@ const commonStyles = StyleSheet.create({
     center: {
         marginTop: 10,
         alignSelf: 'center',
-        // borderWidth:1,
         alignItems: 'center'
     },
     textMain: {
         color: colors.secondaryGray,
         fontWeight: '700',
-        // fontSize: fontSize.medium
-        // padding: 6,
     },
     textSecondary: {
         color: colors.bgWithOpacity,
         fontSize: fontSize.normal -2,
-        // padding: 6,
     },
     textLight: {
         color: colors.textSecondary,
-        // padding: 6,
     },
     textLink:{
         color: colors.primary,
         fontWeight: '700',
         paddingTop: 8
+    },
+    border:{
+        borderWidth: 1,
+        width: "96%", 
+        borderColor: colors.gray 
     }
 });
 

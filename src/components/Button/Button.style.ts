@@ -42,4 +42,7 @@ export default StyleSheet.create({
   outlinedTitle: {
     color: colors.primary,
   },
+  roundContainer:{
+    borderRadius: 40,
+  }
 });

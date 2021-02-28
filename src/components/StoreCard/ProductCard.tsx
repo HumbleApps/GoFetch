@@ -16,8 +16,9 @@ type Props = {
   price: number;
   image?: ImageSourcePropType;
   description?: string;
-  stock: number;
+  stock?: number;
   id: number | string;
+  currentCount?: number;
 };
 
 const ProductCard: FC<Props> = ({
@@ -27,13 +28,18 @@ const ProductCard: FC<Props> = ({
   price,
   stock,
   id,
+  currentCount = 0,
 }) => {
-
   const dispatch = useDispatch();
   const handleChange = (operation, count) => {
     const product = {
-      name, price, id, count
-    }
+      name,
+      price,
+      id,
+      count,
+      image,
+      description,
+    };
     switch (operation) {
       case Operation.ADD: {
         dispatch(addProductToCart(product));
@@ -62,6 +68,7 @@ const ProductCard: FC<Props> = ({
           </View>
           <Counter
             maxCount={stock}
+            currentCount={currentCount}
             handleCount={(operation, count) => handleChange(operation, count)}
           />
         </View>

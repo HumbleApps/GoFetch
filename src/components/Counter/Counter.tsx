@@ -10,11 +10,16 @@ import styles from "./Counter.style";
 
 type Props = {
   maxCount: number;
+  currentCount?: number;
   handleCount: (operation: string, count: number) => void;
 };
 
-const Counter: FC<Props> = ({ maxCount = 20, handleCount }) => {
-  const [counter, setCounter] = useState<number>(0);
+const Counter: FC<Props> = ({
+  maxCount = 20,
+  currentCount = 0,
+  handleCount,
+}) => {
+  const [counter, setCounter] = useState<number>(currentCount);
 
   const handleIncrement = () => {
     if (counter < maxCount) {

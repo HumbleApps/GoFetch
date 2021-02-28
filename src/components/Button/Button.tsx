@@ -24,6 +24,8 @@ interface Props extends TouchableOpacityProps {
   isOutlined?: boolean;
   isClear?: boolean;
   leftImage?: ImageSourcePropType;
+  isRound?: boolean;
+  sideMargin?: number;
 }
 
 const Button: FC<Props> = ({
@@ -34,9 +36,11 @@ const Button: FC<Props> = ({
   iconRight = undefined,
   isOutlined = false,
   isClear = false,
+  isRound = false,
   onPress = () => {},
   disabled,
   leftImage,
+  sideMargin= 0,
   ...props
 }) => {
   const handlePress = (e: NativeSyntheticEvent<NativeTouchEvent>) => {
@@ -49,7 +53,9 @@ const Button: FC<Props> = ({
         isOutlined && styles.outlinedContainer,
         isClear && styles.clearedContainer,
         disabled && styles.disabledContainer,
+        isRound && styles.roundContainer,
         style,
+        {marginLeft: sideMargin, marginRight: sideMargin }
       ]}
       onPress={handlePress}
       activeOpacity={0.7}
