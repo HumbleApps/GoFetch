@@ -18,8 +18,8 @@ export default StyleSheet.create({
     paddingTop: 2 * CONTAINER_VERTICAL_PADDING,
     ...boxShadow,
     backgroundColor: colors.white,
-    borderTopLeftRadius: 36,
-    borderTopRightRadius: 36
+    paddingLeft: 20,
+    paddingRight :20
   },
   item: {
     alignItems: 'center',

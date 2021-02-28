@@ -9,3 +9,4 @@ export const JUG_ICON = require('./jug-product.png');
 export const BAKERY_ICON = require('./bakery_product.png');
 export const DAIRY_PRODUCTS = require('./dairy-products.png');
 export const MASTERCARD = require('./mastercard.png');
+export const AVATAR = require('./man_avatar.png');

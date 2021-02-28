@@ -8,7 +8,8 @@ enum pathNames {
   order = '/order',
   bookmark = '/bookmark',
   cart = '/cart',
-  checkout = '/checkout'
+  checkout = '/checkout',
+  profile = "/profile",
 }
 
 export default pathNames;

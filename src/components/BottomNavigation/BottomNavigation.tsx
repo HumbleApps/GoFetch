@@ -8,7 +8,7 @@ import BottomNavigationItem from "./BottomNavigationItem";
 import pathNames from "routes/pathNames";
 
 import styles from "./BottomNavigation.styles";
-import { faBell, faBook, faBookmark, faHome, faShoppingBag, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faBook, faBookmark, faHome, faShoppingBag, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
 // import TrackEvents from 'constants/trackEvents';
 // import useSegment from 'hooks/useSegment';
 // import { useSelector } from 'react-redux';
@@ -53,10 +53,10 @@ const BottomNavigation = () => {
       />
 
       <BottomNavigationItem
-        title="Notification"
-        iconName={faBell}
-        isActive={match.path === pathNames.notifications}
-        onPress={() => handlePress(pathNames.notifications)}
+        title="Profile"
+        iconName={faUser}
+        isActive={match.path === pathNames.profile}
+        onPress={() => handlePress(pathNames.profile)}
       />
     </View>
   );
